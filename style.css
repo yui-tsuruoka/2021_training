@@ -1,0 +1,264 @@
+
+
+
+
+/*========= LoadingのためのCSS ===============*/
+
+/* Loading背景画面設定　*/
+
+#splash {
+  /*fixedで全面に固定*/
+position: fixed;
+z-index: 999;
+width: 100%;
+height: 100%;
+background:#333;
+text-align:center;
+color:#fff;
+}
+
+/* Loadingバー中央配置　*/
+#splash_text {
+position: absolute;
+top: 50%;
+left: 50%;
+  z-index: 999;
+width: 100%;
+transform: translate(-50%, -50%);
+color: #fff;
+}
+
+/*IE11対策用バーの線の高さ※対応しなければ削除してください*/
+#splash_text svg{
+  height: 2px;
+}
+
+
+
+  
+ 
+/*スクロールで画面が動くやつ*/
+/*========= レイアウトのためのCSS ===============*/
+
+body{
+  background:#333;
+}
+
+img{
+  max-width:100%;
+  height:auto;
+}
+
+
+h1{
+ 
+  color: #008b8b;
+  text-align: center;
+  font-size:50px;
+  padding: 30px 0;
+  margin: 0 0 ;
+}
+
+h2{
+  color: #008b8b;
+  font-size:1.3rem;
+  margin:0 0 20px 0;
+}
+
+th{
+    width:100px ;
+    vertical-align: text-top;
+    text-align: left;
+}
+
+/*写真と文章のセット　装飾のためのCSS*/
+
+.area{
+  position:relative;
+  margin:0 auto 20% auto;
+  padding: 0 30px;
+  max-width:1000px;
+  width:100%;
+}
+
+.area figure{
+  position:relative;
+  left:0;
+  top:0;
+  width: 40%;
+  line-height: 0;
+}
+
+.area:nth-child(2n) figure{
+  left:50%;
+}
+
+.area .box{
+  position:absolute;
+  top:60%;
+  left:30%;
+  background:#fff;
+  padding:30px;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1);
+  width: 580px;
+}
+
+.area:nth-child(2n) .box{
+  left:inherit;
+  right:30%;
+}
+
+
+
+
+
+/*Footerを下付きにする*/
+
+footer::before{
+    margin-top: auto;
+}
+
+footer{
+    position: absolute;
+    width:100%;
+    z-index: 999;
+    /*装飾のためのCSS*/
+    padding:20px 0;
+    bottom:80px;
+    height:80px;
+    color: #fff;
+    text-align: center;
+    background:#333;
+  }
+
+  
+  footer a{
+    color:#fff; 
+  }
+
+
+
+
+
+  /*きいちゃんぎゃらりーのcss*/
+  /*==================================================
+ギャラリーのためのcss
+===================================*/
+
+
+
+
+
+
+ /*説明文スタイル*/
+ /*リストのスタイル*/
+ .dog{
+  list-style: none;
+}
+
+/*box divのスタイル*/
+ .box_g{
+  margin:50px auto;
+  max-width: 700px;;
+  position: relative;
+  padding: 0.25em 1em;
+  border: solid 2px #ffcb8a;
+  border-radius: 3px 0 3px 0;
+  text-align: center;
+  color: #fff;
+}
+.box_g:before,.box_g:after{
+  content: '';
+  position: absolute;
+  width:10px;
+  height: 10px;
+  border: solid 2px #ffcb8a;
+  border-radius: 50%;
+}
+.box_g:after {
+  top:-12px;
+  left:-12px;
+}
+.box_g:before {
+  bottom:-12px;
+  right:-12px;
+}
+.box_g p {
+  margin: 0; 
+  padding: 0;
+}
+
+
+
+
+
+
+/*ギャラリーの設定*/
+
+.gallery{
+  columns: 4;/*段組みの数*/
+  padding:0 15px;/*ギャラリー左右に余白をつける*/
+  }
+  
+  .gallery li {
+      margin-bottom: 20px;/*各画像下に余白をつける*/
+  }
+  
+  /*ギャラリー内のイメージは横幅100%にする*/
+  .gallery img{
+    width:100%;
+    height:auto;
+    vertical-align: bottom;/*画像の下にできる余白を削除*/}
+  
+  /*　横幅900px以下の段組み設定　*/
+  @media only screen and (max-width: 900px) {
+    .gallery{
+    columns:3;
+    } 
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .gallery{
+    columns: 2;
+    } 
+  }
+  
+  
+  /*========= レイアウトのためのCSS ===============*/
+  
+  ul{
+    margin:0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  p{
+    margin:0 10px 10px 10px;
+    word-wrap : break-word;
+  }
+  
+  /*画像を出現させるアニメーションCSS*/
+  
+  .flipLeft{
+  animation-name: flipLeft;
+  animation-duration:0.5s;
+  animation-fill-mode:forwards;
+  perspective-origin: left center;
+  opacity: 0;
+  }
+  
+  @keyframes flipLeft{
+    from {
+     transform: perspective(600px) translate3d(0, 0, 0) rotateY(30deg);
+    opacity: 0;
+    }
+  
+    to {
+    transform: perspective(600px) translate3d(0, 0, 0) rotateY(0deg);
+    opacity: 1;
+    }
+  }
+  
+
+
+ 
