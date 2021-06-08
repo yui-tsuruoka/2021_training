@@ -15,12 +15,12 @@ public class LoginAction extends Action{
 	public String execute(
 		HttpServletRequest request, HttpServletResponse response
 	)throws Exception {
-
+		response.setContentType("text/html charset=utf-8");
 		HttpSession session = request.getSession();
 
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
-		//String cus_name = request.getParameter("cus_name");
+		String cus_name = request.getParameter("cus_name");
 		CustomerDAO dao = new CustomerDAO();
 		Customer customer = dao.search(id, password);
 
@@ -31,8 +31,9 @@ public class LoginAction extends Action{
 		}
 
 		//ログイン失敗時の処理
-		//これだとincludeではなく遷移してしまう。
-		return "login-error.jsp";
+
+		session.setAttribute("id", id);
+		return "login.jsp";
 
 	/*	response.setContentType("text/html; charset=UTF-8");
 		request.getRequestDispatcher("../jsp/login-error.jsp").include(request, response);

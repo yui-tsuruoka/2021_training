@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /*
  * FrontControllerでフォームタグの中身を受け取って〇〇.〇〇の形に処理加工。
  * クラスのインスタンス作成とexecuteメソッドを呼び出してアクションを実行する。
- * 
+ *
  * */
 
 @WebServlet(urlPatterns= {"*.action"})
